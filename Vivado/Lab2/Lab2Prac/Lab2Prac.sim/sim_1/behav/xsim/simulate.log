@@ -1,0 +1,5 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+scores =  60 / 60
+PASS!
+$finish called at time : 10200 ps : File "C:/Users/jiang/OneDrive/LabFile/Lab2/Prac/template/lab2_2_practice_t.v" Line 106

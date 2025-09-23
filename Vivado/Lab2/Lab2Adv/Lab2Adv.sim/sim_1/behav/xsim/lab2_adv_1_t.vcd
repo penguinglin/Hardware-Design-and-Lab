@@ -1,0 +1,373 @@
+$date
+   Sat Sep 20 23:43:17 2025
+$end
+$version
+  2019.2
+$end
+$timescale
+  1ps
+$end
+$scope module lab2_adv_1_t $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 9 # clause_1 [8:0] $end
+$var reg 9 $ clause_2 [8:0] $end
+$var reg 9 % clause_3 [8:0] $end
+$var reg 9 & clause_4 [8:0] $end
+$var wire 3 ' out [2:0] $end
+$var wire 1 ( satisfaction $end
+$var integer 32 ) i $end
+$scope module mod $end
+$var wire 1 * clk $end
+$var wire 1 + rst $end
+$var wire 9 , clause_1 [8:0] $end
+$var wire 9 - clause_2 [8:0] $end
+$var wire 9 . clause_3 [8:0] $end
+$var wire 9 / clause_4 [8:0] $end
+$var reg 1 0 satisfaction $end
+$var reg 3 1 out [2:0] $end
+$var integer 32 2 i $end
+$var reg 3 3 assign_val [2:0] $end
+$var reg 1 4 found $end
+$var reg 3 5 temp_out [2:0] $end
+$var reg 1 6 temp_satisfaction $end
+$scope function eval_lit $end
+$var reg 1 7 eval_lit $end
+$var reg 3 8 lit [2:0] $end
+$var reg 3 9 val [2:0] $end
+$upscope $end
+$scope function eval_clause $end
+$var reg 1 : eval_clause $end
+$var reg 9 ; clause [8:0] $end
+$var reg 3 < val [2:0] $end
+$var reg 1 = l1 $end
+$var reg 1 > l2 $end
+$var reg 1 ? l3 $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+x"
+bx #
+bx $
+bx %
+bx &
+b0 '
+0(
+bx )
+1*
+x+
+bx ,
+bx -
+bx .
+bx /
+00
+b0 1
+b1000 2
+b111 3
+04
+b0 5
+06
+07
+bx 8
+b111 9
+0:
+bx ;
+b111 <
+0=
+0>
+0?
+$end
+#5000
+0!
+0*
+#10000
+1!
+1*
+b1000 2
+b111 3
+b111 9
+b111 <
+#15000
+0!
+1"
+b0 #
+b0 $
+b0 %
+b0 &
+0*
+1+
+b0 ,
+b0 -
+b0 .
+b0 /
+#20000
+1!
+1*
+#25000
+0!
+0*
+#30000
+1!
+1*
+#35000
+0!
+0"
+b1010 #
+b100101110 $
+b101110 %
+b100001010 &
+b0 )
+0*
+0+
+b1010 ,
+b100101110 -
+b101110 .
+b100001010 /
+#40000
+1!
+b1 '
+1(
+1*
+10
+b1 1
+b10 2
+b1 3
+14
+b1 5
+16
+17
+b10 8
+b1 9
+1:
+b100001010 ;
+b1 <
+1=
+0>
+1?
+#45000
+0!
+b0 #
+b100100100 $
+b1001001 %
+b101101101 &
+b1 )
+0*
+b0 ,
+b100100100 -
+b1001001 .
+b101101101 /
+#50000
+1!
+b0 '
+0(
+1*
+00
+b0 1
+b1000 2
+b111 3
+04
+b0 5
+06
+07
+b100 8
+b111 9
+0:
+b100100100 ;
+b111 <
+0=
+0>
+0?
+#55000
+0!
+b10010010 #
+b110110110 $
+b1010 %
+b100101110 &
+b10 )
+0*
+b10010010 ,
+b110110110 -
+b1010 .
+b100101110 /
+#60000
+1!
+1*
+b1000 2
+b111 3
+07
+b110 8
+b111 9
+0:
+b110110110 ;
+b111 <
+0=
+0>
+0?
+#65000
+0!
+b101100 #
+b10010010 $
+b100101010 %
+b1110 &
+b11 )
+0*
+b101100 ,
+b10010010 -
+b100101010 .
+b1110 /
+#70000
+1!
+b11 '
+1(
+1*
+10
+b11 1
+b100 2
+b11 3
+14
+b11 5
+16
+07
+b110 8
+b11 9
+1:
+b1110 ;
+b11 <
+0=
+1>
+0?
+#75000
+0!
+b101110 #
+b100001010 $
+b1110000 %
+b101010100 &
+b100 )
+0*
+b101110 ,
+b100001010 -
+b1110000 .
+b101010100 /
+#80000
+1!
+b0 '
+1*
+b0 1
+b1 2
+b0 3
+14
+b0 5
+16
+17
+b100 8
+b0 9
+b101010100 ;
+b0 <
+1=
+0>
+1?
+#85000
+0!
+b0 #
+b100100100 $
+b1001001 %
+b101101101 &
+b101 )
+0*
+b0 ,
+b100100100 -
+b1001001 .
+b101101101 /
+#90000
+1!
+0(
+1*
+00
+b1000 2
+b111 3
+04
+06
+07
+b100 8
+b111 9
+0:
+b100100100 ;
+b111 <
+0=
+0>
+0?
+#95000
+0!
+b10001000 #
+b1100010 $
+b101010 %
+b100101010 &
+b110 )
+0*
+b10001000 ,
+b1100010 -
+b101010 .
+b100101010 /
+#100000
+1!
+b1 '
+1(
+1*
+10
+b1 1
+b10 2
+b1 3
+14
+b1 5
+16
+17
+b10 8
+b1 9
+1:
+b100101010 ;
+b1 <
+1=
+1>
+1?
+#105000
+0!
+b1 #
+b1001010 $
+b10010000 %
+b100101110 &
+b111 )
+0*
+b1 ,
+b1001010 -
+b10010000 .
+b100101110 /
+#110000
+1!
+b11 '
+1*
+b11 1
+b100 2
+b11 3
+14
+b11 5
+16
+07
+b110 8
+b11 9
+1:
+b100101110 ;
+b11 <
+1=
+0>
+0?
+#115000
+0!
+b1000 )
+0*
+#120000
+1!
+1*

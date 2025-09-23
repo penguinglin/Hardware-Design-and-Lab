@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab2/Advance/lab2_adv_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab2_adv_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/Vivado/Lab2/Lab2Adv2/LabAdv2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

@@ -1,0 +1,8 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+WARNING: Too many words specified in data file pattern_B.dat
+OUT1 :  30 / 30
+OUT2 :  30 / 30
+scores =  60 / 60
+PASS!
+$finish called at time : 7300 ps : File "C:/Users/jiang/OneDrive/LabFile/Lab2/Lab/template/lab2_2_t.v" Line 123

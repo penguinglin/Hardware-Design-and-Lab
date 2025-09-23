@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab2/Lab/template/lab2_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab2_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab2/Lab/template/lab2_2_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab2_2_tb

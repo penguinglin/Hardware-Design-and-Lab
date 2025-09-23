@@ -1,0 +1,168 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 100: result=0
+Tried assignment 100: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 101: result=0
+Tried assignment 101: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 110: result=0
+Tried assignment 110: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 111: result=0
+Tried assignment 111: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 100: result=0
+Tried assignment 100: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 101: result=0
+Tried assignment 101: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 110: result=0
+Tried assignment 110: not satisfied
+Clause xxxxxxxxx, with literals       @,       @,       @ and assignment 111: result=0
+Tried assignment 111: not satisfied
+Clause 000001010, with literals       A,       B,       C and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 000001010, with literals       A,       B,       C and assignment 001: result=1
+Clause 100101110, with literals      ~A,      ~B,      ~C and assignment 001: result=1
+Clause 000101110, with literals       A,      ~B,      ~C and assignment 001: result=1
+Clause 100001010, with literals      ~A,       B,       C and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 000001010, with literals       A,       B,       C and assignment 010: result=1
+Clause 100101110, with literals      ~A,      ~B,      ~C and assignment 010: result=1
+Clause 000101110, with literals       A,      ~B,      ~C and assignment 010: result=1
+Clause 100001010, with literals      ~A,       B,       C and assignment 010: result=1
+Found satisfying assignment 010
+Clause 000000000, with literals       A,       A,       A and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 001: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 011: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 100: result=0
+Tried assignment 100: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 101: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 101: result=0
+Tried assignment 101: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 110: result=0
+Tried assignment 110: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 111: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 111: result=0
+Tried assignment 111: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 100: result=1
+Clause 110110110, with literals      ~C,      ~C,      ~C and assignment 100: result=0
+Tried assignment 100: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 101: result=1
+Clause 110110110, with literals      ~C,      ~C,      ~C and assignment 101: result=0
+Tried assignment 101: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 110: result=1
+Clause 110110110, with literals      ~C,      ~C,      ~C and assignment 110: result=0
+Tried assignment 110: not satisfied
+Clause 010010010, with literals       C,       C,       C and assignment 111: result=1
+Clause 110110110, with literals      ~C,      ~C,      ~C and assignment 111: result=0
+Tried assignment 111: not satisfied
+Clause 000101100, with literals       A,      ~B,      ~A and assignment 000: result=1
+Clause 010010010, with literals       C,       C,       C and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 000101100, with literals       A,      ~B,      ~A and assignment 001: result=1
+Clause 010010010, with literals       C,       C,       C and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 000101100, with literals       A,      ~B,      ~A and assignment 010: result=1
+Clause 010010010, with literals       C,       C,       C and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause 000101100, with literals       A,      ~B,      ~A and assignment 011: result=1
+Clause 010010010, with literals       C,       C,       C and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause 000101100, with literals       A,      ~B,      ~A and assignment 100: result=1
+Clause 010010010, with literals       C,       C,       C and assignment 100: result=1
+Clause 100101010, with literals      ~A,      ~B,       C and assignment 100: result=1
+Clause 000001110, with literals       A,       B,      ~C and assignment 100: result=0
+Tried assignment 100: not satisfied
+Clause 000101100, with literals       A,      ~B,      ~A and assignment 101: result=1
+Clause 010010010, with literals       C,       C,       C and assignment 101: result=1
+Clause 100101010, with literals      ~A,      ~B,       C and assignment 101: result=1
+Clause 000001110, with literals       A,       B,      ~C and assignment 101: result=1
+Found satisfying assignment 101
+Clause 000101110, with literals       A,      ~B,      ~C and assignment 000: result=1
+Clause 100001010, with literals      ~A,       B,       C and assignment 000: result=1
+Clause 001110000, with literals       B,      ~C,       A and assignment 000: result=1
+Clause 101010100, with literals      ~B,       C,      ~A and assignment 000: result=1
+Found satisfying assignment 000
+Clause 000000000, with literals       A,       A,       A and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 001: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 011: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 100: result=0
+Tried assignment 100: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 101: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 101: result=0
+Tried assignment 101: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 110: result=0
+Tried assignment 110: not satisfied
+Clause 000000000, with literals       A,       A,       A and assignment 111: result=1
+Clause 100100100, with literals      ~A,      ~A,      ~A and assignment 111: result=0
+Tried assignment 111: not satisfied
+Clause 010001000, with literals       C,       B,       A and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 010001000, with literals       C,       B,       A and assignment 001: result=1
+Clause 001100010, with literals       B,      ~A,       C and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 010001000, with literals       C,       B,       A and assignment 010: result=1
+Clause 001100010, with literals       B,      ~A,       C and assignment 010: result=1
+Clause 000101010, with literals       A,      ~B,       C and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause 010001000, with literals       C,       B,       A and assignment 011: result=1
+Clause 001100010, with literals       B,      ~A,       C and assignment 011: result=1
+Clause 000101010, with literals       A,      ~B,       C and assignment 011: result=1
+Clause 100101010, with literals      ~A,      ~B,       C and assignment 011: result=0
+Tried assignment 011: not satisfied
+Clause 010001000, with literals       C,       B,       A and assignment 100: result=1
+Clause 001100010, with literals       B,      ~A,       C and assignment 100: result=1
+Clause 000101010, with literals       A,      ~B,       C and assignment 100: result=1
+Clause 100101010, with literals      ~A,      ~B,       C and assignment 100: result=1
+Found satisfying assignment 100
+Clause 000000001, with literals       A,       A,       B and assignment 000: result=0
+Tried assignment 000: not satisfied
+Clause 000000001, with literals       A,       A,       B and assignment 001: result=1
+Clause 001001010, with literals       B,       B,       C and assignment 001: result=0
+Tried assignment 001: not satisfied
+Clause 000000001, with literals       A,       A,       B and assignment 010: result=1
+Clause 001001010, with literals       B,       B,       C and assignment 010: result=1
+Clause 010010000, with literals       C,       C,       A and assignment 010: result=0
+Tried assignment 010: not satisfied
+Clause 000000001, with literals       A,       A,       B and assignment 011: result=1
+Clause 001001010, with literals       B,       B,       C and assignment 011: result=1
+Clause 010010000, with literals       C,       C,       A and assignment 011: result=1
+Clause 100101110, with literals      ~A,      ~B,      ~C and assignment 011: result=1
+Found satisfying assignment 011
+All test cases done.
+$finish called at time : 120 ns : File "C:/Users/jiang/OneDrive/LabFile/Lab2/Advance/lab2_adv_1_t.v" Line 176
