@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab3/Prac/lab3_practice/lab3_practice.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab3_practice
+INFO: [VRFC 10-311] analyzing module clock_divider
