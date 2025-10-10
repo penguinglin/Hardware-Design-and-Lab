@@ -22,7 +22,6 @@ module lab3_basic (
 
 
     integer F_time;
-    // one sec counter
     // use flash_final as clock, not clk
     always @(posedge flash_final or posedge rst) begin
         if (rst) begin

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue Oct  7 14:59:27 2025
+# Process ID: 23040
+# Current directory: C:/Users/jiang/OneDrive/Vivado/Lab3/Lab3Adv/Lab3Adv2/Lab3Adv2.runs/impl_1
+# Command line: vivado.exe -log lab3_basic.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source lab3_basic.tcl -notrace
+# Log file: C:/Users/jiang/OneDrive/Vivado/Lab3/Lab3Adv/Lab3Adv2/Lab3Adv2.runs/impl_1/lab3_basic.vdi
+# Journal file: C:/Users/jiang/OneDrive/Vivado/Lab3/Lab3Adv/Lab3Adv2/Lab3Adv2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source lab3_basic.tcl -notrace

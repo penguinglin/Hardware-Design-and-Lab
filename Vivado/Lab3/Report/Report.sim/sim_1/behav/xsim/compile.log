@@ -1,0 +1,3 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab3/Test_Report/test_report.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module one_pulse_demo
+INFO: [VRFC 10-311] analyzing module tb_one_pulse_demo
