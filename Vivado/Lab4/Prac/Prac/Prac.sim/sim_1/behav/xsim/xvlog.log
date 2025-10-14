@@ -1,0 +1,9 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_LSFR.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lfsr9_custom
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_prac.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab4_Practice
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debounce
+INFO: [VRFC 10-311] analyzing module one_pulse
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_lab4_Practice

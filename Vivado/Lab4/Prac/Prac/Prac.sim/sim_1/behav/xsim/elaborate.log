@@ -1,0 +1,27 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto 330d0a75c5fc4b64a234bc082fb52635 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_lab4_Practice_behav xil_defaultlib.tb_lab4_Practice xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_prac.v" Line 1. Module lab4_Practice doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 47. Module clock_divider doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 4. Module debounce doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 18. Module one_pulse doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 4. Module debounce doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 18. Module one_pulse doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 4. Module debounce doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_support.v" Line 18. Module one_pulse doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/jiang/OneDrive/LabFile/Lab4/Prac/lab4_LSFR.v" Line 1. Module lfsr9_custom doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.debounce
+Compiling module xil_defaultlib.one_pulse
+Compiling module xil_defaultlib.lfsr9_custom
+Compiling module xil_defaultlib.lab4_Practice
+Compiling module xil_defaultlib.tb_lab4_Practice
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_lab4_Practice_behav
