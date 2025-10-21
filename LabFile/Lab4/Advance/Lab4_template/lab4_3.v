@@ -14,6 +14,19 @@ module lab4_3(
     output wire [6:0] DISPLAY,
     output wire [3:0] DIGIT
     );   
+    // Rst button debounce and one-pulse
+    wire rst_db_out;
+    debounce rst_db(
+        .clk(clk),
+        .pb(rst),
+        .pb_debounced(rst_db_out)
+    );
+    wire rst_button;
+    onepulse rst_op(
+        .clk(clk),
+        .signal(rst_db_out),
+        .op(rst_button)
+    );
 
     // -----------------------------
     // override buffer
@@ -56,7 +69,7 @@ module lab4_3(
         wire [8:0] lfsr;
         KeyboardControl kb(
             .clk(clk),
-            .rst(rst),
+            .rst(rst_button),
             .PS2_DATA(PS2_DATA),
             .PS2_CLK(PS2_CLK),
             .state_init_request(kb_init_request), 
@@ -73,8 +86,8 @@ module lab4_3(
         reg submit_d; 
         wire submit_pulse;
         assign submit_pulse = submit_enter & ~submit_d;
-        always @(posedge clk or posedge rst) begin
-            if (rst)
+        always @(posedge clk or posedge rst_button) begin
+            if (rst_button)
                 submit_d <= 1'b0;
             else
                 submit_d <= submit_enter;
@@ -82,8 +95,8 @@ module lab4_3(
         reg rst_d;
         wire rst_pulse;
         assign rst_pulse = rst_enter & ~rst_d;
-        always @(posedge clk or posedge rst) begin
-            if (rst)
+        always @(posedge clk or posedge rst_button) begin
+            if (rst_button)
                 rst_d <= 1'b0;
             else
                 rst_d <= rst_enter;
@@ -92,8 +105,8 @@ module lab4_3(
     // -----------------------------
     // FSM Sequential
     // ----------------------------
-        always@(posedge clk,posedge rst)begin
-            if(rst)begin
+        always@(posedge clk,posedge rst_button)begin
+            if(rst_button)begin
                 state <= S_INITIAL;
                 last_state <= S_INITIAL;
             end else if (rst_pulse) begin
@@ -135,8 +148,8 @@ module lab4_3(
     // FSM Sequential: Output & Behavior
     // -----------------------------
         wire right;
-        always @(posedge clk or posedge rst) begin
-            if(rst) begin
+        always @(posedge clk or posedge rst_button) begin
+            if(rst_button) begin
                 display_override <= 0;
                 display_mux_num <= 16'hCCCC;
                 guess_flag <= 1;
@@ -179,7 +192,7 @@ module lab4_3(
     // -----------------------------
         SevenSegment seven_seg(
         .clk(clk),
-        .rst(rst),
+        .rst(rst_button),
         .nums(display_source_num), 
         .digit(DIGIT),
         .display(DISPLAY)
@@ -209,7 +222,7 @@ module lab4_3(
         wire [2:0] sound;
         note_gen noteGen_00(
             .clk(clk), 
-            .rst(rst), 
+            .rst(rst_button), 
             .volume(sound),
             .note_div_left(freq_inL), 
             .note_div_right(freq_inR), 
@@ -220,7 +233,7 @@ module lab4_3(
         // Speaker controller
         speaker_control sc(
             .clk(clk), 
-            .rst(rst), 
+            .rst(rst_button), 
             .audio_in_left(audio_in_left),      // left channel audio data input
             .audio_in_right(audio_in_right),    // right channel audio data input
             .audio_mclk(audio_mclk),            // master clock
@@ -448,7 +461,6 @@ module KeyboardControl(
             end
         end
     end 
-
 endmodule
 
 module lfsr9_custom (
@@ -487,6 +499,7 @@ module lfsr9_custom (
             lfsr <= next_lfsr;
     end
 endmodule
+
 module note_gen(
     input clk, // clock from crystal
     input rst, // active high reset
@@ -578,14 +591,6 @@ module note_gen(
     assign audio_right = (note_div_right == 22'd1) ? 16'h0000 :real_r;
 endmodule
 
-// SevenSegment.v                                         //
-// Use nums[15:0] control the 4-digit 7-segment display   //
-// nums: {BCD4, BCD3, BCD2, BCD1}                         //
-//       0-9:present num 0-9; 10:A; 11:b; 12:-;           //
-//       others(1111):nothing                             //
-
-// Modify: here you can add more display type if you want, then outside the module you can pass the "nums" wire to make here display what you want.
-// Notice: here can just display at most 16 types, since each BCD is 4 bits.(You must modify nums bit size to make it bigger if you want more types)
 module SevenSegment(
 	output reg [6:0] display,
 	output reg [3:0] digit,

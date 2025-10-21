@@ -131,11 +131,11 @@ module KeyboardControl(
                         endcase
                     end else if (key_num == 4'b1110) begin
                         sel_pos <= sel_pos + 1;
-                        case(sel_pos +1 )
-                            2'b00: BCD4 <= 4'd0;
-                            2'b01: BCD3 <= 4'd0;
-                            2'b10: BCD2 <= 4'd0;
-                            2'b11: BCD1 <= 4'd0;
+                        case(sel_pos)
+                            2'b00: BCD3 <= 4'd0;
+                            2'b01: BCD2 <= 4'd0;
+                            2'b10: BCD1 <= 4'd0;
+                            2'b11: BCD4 <= 4'd0;
                         endcase
                     end else if (key_num == 4'b1111) begin
                         submit <= 1;

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Mon Oct 20 19:42:16 2025
+| Date         : Tue Oct 21 15:48:13 2025
 | Host         : LAPTOP-TN84JATT running 64-bit major release  (build 9200)
 | Command      : report_utilization -file lab4_2_utilization_synth.rpt -pb lab4_2_utilization_synth.pb
 | Design       : lab4_2
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1023 |     0 |     20800 |  4.92 |
-|   LUT as Logic          | 1023 |     0 |     20800 |  4.92 |
+| Slice LUTs*             | 1026 |     0 |     20800 |  4.93 |
+|   LUT as Logic          | 1026 |     0 |     20800 |  4.93 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |  672 |     0 |     41600 |  1.62 |
 |   Register as Flip Flop |  672 |     0 |     41600 |  1.62 |
@@ -150,13 +150,13 @@ Table of Contents
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDCE     |  656 |        Flop & Latch |
-| LUT4     |  588 |                 LUT |
+| LUT4     |  587 |                 LUT |
 | LUT6     |  370 |                 LUT |
 | MUXF7    |  144 |               MuxFx |
+| LUT5     |   69 |                 LUT |
 | MUXF8    |   67 |               MuxFx |
-| LUT5     |   67 |                 LUT |
 | OBUF     |   27 |                  IO |
-| LUT2     |   25 |                 LUT |
+| LUT2     |   26 |                 LUT |
 | LUT1     |   17 |                 LUT |
 | LUT3     |   15 |                 LUT |
 | CARRY4   |   11 |          CarryLogic |
