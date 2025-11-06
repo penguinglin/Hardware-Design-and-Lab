@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab5/Prac/lab5_practice.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab5_practice
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jiang/OneDrive/LabFile/Lab5/Prac/lab5_prac_t.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module lab5_precaitc_t

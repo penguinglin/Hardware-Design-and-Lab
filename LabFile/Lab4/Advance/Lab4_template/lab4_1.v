@@ -18,6 +18,7 @@ output wire [6:0] display
         .clk(clk)
   );
 endmodule
+
 module SampleDisplay(
 	output wire [6:0] display,
 	output wire [3:0] digit,
@@ -50,6 +51,35 @@ module SampleDisplay(
 		9'b0_0111_0101, // right_8 => 75
 		9'b0_0111_1101  // right_9 => 7D
 	};
+
+	always @ (*) begin
+		case (last_change)
+			// Left side numbers
+			KEY_CODES[00] : key_num = 5'b00000;
+			KEY_CODES[01] : key_num = 5'b00001;
+			KEY_CODES[02] : key_num = 5'b00010;
+			KEY_CODES[03] : key_num = 5'b00011;
+			KEY_CODES[04] : key_num = 5'b00100;
+			KEY_CODES[05] : key_num = 5'b00101;
+			KEY_CODES[06] : key_num = 5'b00110;
+			KEY_CODES[07] : key_num = 5'b00111;
+			KEY_CODES[08] : key_num = 5'b01000;
+			KEY_CODES[09] : key_num = 5'b01001;
+			// Right side keys
+			KEY_CODES[10] : key_num = 5'b00000;
+			KEY_CODES[11] : key_num = 5'b00001;
+			KEY_CODES[12] : key_num = 5'b00010;
+			KEY_CODES[13] : key_num = 5'b00011;
+			KEY_CODES[14] : key_num = 5'b00100;
+			KEY_CODES[15] : key_num = 5'b00101;
+			KEY_CODES[16] : key_num = 5'b00110;
+			KEY_CODES[17] : key_num = 5'b00111;
+			KEY_CODES[18] : key_num = 5'b01000;
+			KEY_CODES[19] : key_num = 5'b01001;
+			// Default case
+			default		  : key_num = 5'b11111;
+		endcase
+	end
 	
 	reg [15:0] nums;
 	reg [4:0] key_num;
@@ -105,36 +135,7 @@ module SampleDisplay(
 	end
 	assign nums_next = nums;
 	
-	always @ (*) begin
-		case (last_change)
-			// Left side numbers
-			KEY_CODES[00] : key_num = 5'b00000;
-			KEY_CODES[01] : key_num = 5'b00001;
-			KEY_CODES[02] : key_num = 5'b00010;
-			KEY_CODES[03] : key_num = 5'b00011;
-			KEY_CODES[04] : key_num = 5'b00100;
-			KEY_CODES[05] : key_num = 5'b00101;
-			KEY_CODES[06] : key_num = 5'b00110;
-			KEY_CODES[07] : key_num = 5'b00111;
-			KEY_CODES[08] : key_num = 5'b01000;
-			KEY_CODES[09] : key_num = 5'b01001;
-
-			// Right side keys
-			KEY_CODES[10] : key_num = 5'b00000;
-			KEY_CODES[11] : key_num = 5'b00001;
-			KEY_CODES[12] : key_num = 5'b00010;
-			KEY_CODES[13] : key_num = 5'b00011;
-			KEY_CODES[14] : key_num = 5'b00100;
-			KEY_CODES[15] : key_num = 5'b00101;
-			KEY_CODES[16] : key_num = 5'b00110;
-			KEY_CODES[17] : key_num = 5'b00111;
-			KEY_CODES[18] : key_num = 5'b01000;
-			KEY_CODES[19] : key_num = 5'b01001;
-
-			// Default case
-			default		  : key_num = 5'b11111;
-		endcase
-	end
+	
 	
 endmodule
 
@@ -147,8 +148,6 @@ module SevenSegment(
   );
     
     reg [15:0] clk_divider;
-    reg [3:0] display_num;
-    
     always @ (posedge clk, posedge rst) begin
     	if (rst) begin
     		clk_divider <= 15'b0;
@@ -157,6 +156,8 @@ module SevenSegment(
     	end
     end
     
+		
+    reg [3:0] display_num;
     always @ (posedge clk_divider[15], posedge rst) begin
     	if (rst) begin
     		display_num <= 4'b0000;
@@ -199,9 +200,7 @@ module SevenSegment(
 				7 : display = 7'b1111000;   //0111
 				8 : display = 7'b0000000;   //1000
 				9 : display = 7'b0010000;	//1001
-
 			default : display = 7'b0111111; // -
     	endcase
     end
-    
 endmodule
