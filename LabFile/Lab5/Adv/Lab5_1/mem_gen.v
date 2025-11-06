@@ -1,72 +1,92 @@
 module mem_addr_gen(
-    input clk,
-    input rst,
-    input dir_left,
-    input dir_up,
-    //input en,
-    //input dir,
-    input vmir,
-    input hmir,
-    input speed,
-    //input enlarge,
-    input [9:0] h_cnt,
-    input [9:0] v_cnt,
+    input clk,          // clk_20
+    input rst,          // asynchronous reset
+    input dir_left,     // scroll left enable
+    input dir_up,       // scroll up enable
+    input vmir,         // vertical mirror
+    input hmir,         // horizontal mirror
+    input speed,        // 0: slow, 1: fast
+    input [9:0] h_cnt,  // from VGA controller
+    input [9:0] v_cnt,  // from VGA controller
     output [16:0] pixel_addr
 );
 
-    parameter IMAGE_WIDTH = 320;
+    parameter IMAGE_WIDTH  = 320;
     parameter IMAGE_HEIGHT = 240;
-    parameter IMAGE_SIZE = 76800;
+    parameter IMAGE_SIZE   = 76800;
 
-    wire [9:0] h_cnt_new, v_cnt_new;
-    assign h_cnt_new = h_cnt >> 1;  // 320
-    assign v_cnt_new = v_cnt >> 1;  // 240
+    // downscale VGA coordinates to image coordinates
+    wire [9:0] h_cnt_new = h_cnt >> 1;
+    wire [9:0] v_cnt_new = v_cnt >> 1;
 
+    // mirror coordinate mapping (purely display effect)
+    wire [9:0] x_res = hmir ? (IMAGE_WIDTH  - 1 - h_cnt_new) : h_cnt_new;
+    wire [9:0] y_res = vmir ? (IMAGE_HEIGHT - 1 - v_cnt_new) : v_cnt_new;
 
-    wire [9:0] x_trans, y_trans;
-    assign x_trans = hmir ? (IMAGE_WIDTH - 1 - h_cnt_new) : h_cnt_new;
-    assign y_trans = vmir ? (IMAGE_HEIGHT - 1 - v_cnt_new) : v_cnt_new;
-
-
-    // enable enlarge
-    wire [9:0] x_res, y_res;
-    assign x_res =  x_trans;
-    assign y_res =  y_trans;
-
-
-    reg [21:0] scroll_cnt;
-    wire scroll_en;
-    always @(posedge clk or posedge rst) begin
-        if (rst)
-            scroll_cnt <= 0;
-        else
-            scroll_cnt <= scroll_cnt + 1;
-    end
-    assign scroll_en = speed ? (scroll_cnt[19]) : (scroll_cnt[21]);
-
-
+    // scrolling offset registers
     reg [9:0] x_off, y_off;
-    always @(posedge clk or posedge rst) begin
-        if (rst == 1) begin
-            x_off <= 0;
-            y_off <= 0;
-        end else if (scroll_en) begin
-            if (dir_left || dir_up) begin
-                if (dir_left)
-                    x_off <= x_off + 1;
-                else
-                    x_off <= x_off;
+    reg [2:0] count_4;  // small divider for slow speed
 
-                if (dir_up)
-                    y_off <= y_off + 1;
-                else
-                    y_off <= y_off;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            x_off  <= 0;
+            y_off  <= 0;
+            count_4 <= 0;
+        end else begin
+            // -----------------------------
+            // Update rate control by speed
+            // -----------------------------
+            if (speed == 0) begin
+                if (count_4 >= 3'd3) begin
+                    count_4 <= 0;
+                    // --- X offset update ---
+                    if (dir_left) begin
+                        if (hmir) begin
+                            // mirror mode → offset direction reversed
+                            x_off <= (x_off == 0) ? IMAGE_WIDTH - 1 : x_off - 1;
+                        end else begin
+                            x_off <= (x_off == IMAGE_WIDTH - 1) ? 0 : x_off + 1;
+                        end
+                    end
+
+                    // --- Y offset update ---
+                    if (dir_up) begin
+                        if (vmir) begin
+                            // mirror mode → offset direction reversed
+                            y_off <= (y_off == 0) ? IMAGE_HEIGHT - 1 : y_off - 1;
+                        end else begin
+                            y_off <= (y_off == IMAGE_HEIGHT - 1) ? 0 : y_off + 1;
+                        end
+                    end
+                end else begin
+                    count_4 <= count_4 + 1;
+                end
+            end else begin
+                // fast mode → update every cycle
+                if (dir_left) begin
+                    if (hmir)
+                        x_off <= (x_off == 0) ? IMAGE_WIDTH - 1 : x_off - 1;
+                    else
+                        x_off <= (x_off == IMAGE_WIDTH - 1) ? 0 : x_off + 1;
+                end
+                if (dir_up) begin
+                    if (vmir)
+                        y_off <= (y_off == 0) ? IMAGE_HEIGHT - 1 : y_off - 1;
+                    else
+                        y_off <= (y_off == IMAGE_HEIGHT - 1) ? 0 : y_off + 1;
+                end
             end
         end
     end
-    
-    assign pixel_addr =
-        (((x_res + x_off) % IMAGE_WIDTH)
-        + (((y_res + y_off) % IMAGE_HEIGHT) * IMAGE_WIDTH)) % IMAGE_SIZE;
+
+    // coordinate wrapping (prevent overflow)
+    wire [9:0] x_tmp = x_res + x_off;
+    wire [9:0] y_tmp = y_res + y_off;
+
+    wire [9:0] x_addr = (x_tmp >= IMAGE_WIDTH)  ? x_tmp - IMAGE_WIDTH  : x_tmp;
+    wire [9:0] y_addr = (y_tmp >= IMAGE_HEIGHT) ? y_tmp - IMAGE_HEIGHT : y_tmp;
+
+    // compute final pixel address
+    assign pixel_addr = x_addr + y_addr * IMAGE_WIDTH;
 
 endmodule

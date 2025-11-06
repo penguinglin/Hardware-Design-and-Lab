@@ -22,7 +22,7 @@ module lab5_1 (
     // add your design here
     wire [11:0] data;
     wire clk_2;
-    wire clk_22;
+    wire clk_20;
     wire [16:0] pixel_addr;
     wire [11:0] pixel;
     wire valid;
@@ -40,14 +40,14 @@ module lab5_1 (
         .clk_div(clk_2)
     );
 
-    clock_divider #(.n(22)) clk_div_22(
+    clock_divider #(.n(20)) clk_div_20(
         .clk(clk),
-        .clk_div(clk_22)
+        .clk_div(clk_20)
     );
 
 
     mem_addr_gen mem_inst(
-        .clk(clk_22),
+        .clk(clk_20),
         .rst(rst),
         .dir_left(dir_left),
         .dir_up(dir_up),
