@@ -130,6 +130,7 @@ module mem_addr_gen(
                             // mirror mode → offset direction reversed
                             x_off <= (x_off == 0) ? IMAGE_WIDTH - 1 : x_off - 1;
                         end else begin
+                            // read right digit
                             x_off <= (x_off == IMAGE_WIDTH - 1) ? 0 : x_off + 1;
                         end
                     end

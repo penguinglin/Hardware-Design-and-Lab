@@ -1,0 +1,93 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
+| Date         : Tue Dec  2 14:25:30 2025
+| Host         : LAPTOP-TN84JATT running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file exam2_B_control_sets_placed.rpt
+| Design       : exam2_B
+| Device       : xc7a35t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    15 |
+|    Minimum number of control sets                        |    15 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    42 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    15 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     2 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              40 |           12 |
+| No           | No                    | Yes                    |             103 |           38 |
+| No           | Yes                   | No                     |              19 |           11 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             564 |          198 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------+------------------------------------------+------------------+------------------+----------------+
+|      Clock Signal      |               Enable Signal              | Set/Reset Signal | Slice Load Count | Bel Load Count |
++------------------------+------------------------------------------+------------------+------------------+----------------+
+|  clk_IBUF_BUFG         | kb/inst/Ps2Interface_i/ps2_clk_s1        | o1/rst_op        |                1 |              1 |
+|  clk_IBUF_BUFG         | kb/inst/Ps2Interface_i/ps2_data_s1       | o1/rst_op        |                1 |              1 |
+|  kb/key_reg[0]_0[0]    |                                          | kb/AS[0]         |                1 |              3 |
+|  clk_IBUF_BUFG         | kb/inst/Ps2Interface_i/bits_count        | o1/rst_op        |                2 |              4 |
+|  s/clk_divider_reg[15] |                                          | o1/rst_op        |                2 |              7 |
+|  clk_IBUF_BUFG         | kb/E[0]                                  | o1/rst_op        |                3 |              7 |
+|  clk_IBUF_BUFG         | kb/inst/Ps2Interface_i/rx_finish         | o1/rst_op        |                1 |              8 |
+|  clk_IBUF_BUFG         | kb/inst/Ps2Interface_i/rx_valid          | o1/rst_op        |                2 |              8 |
+|  clk_IBUF_BUFG         | kb/inst/Ps2Interface_i/frame[10]_i_1_n_0 | o1/rst_op        |                2 |             11 |
+|  clk_IBUF_BUFG         | kb/inst/E[0]                             | o1/rst_op        |                2 |             12 |
+|  nolabel_line144/CLK   |                                          | o1/rst_op        |                5 |             14 |
+|  led_reg[15]_i_2_n_0   |                                          | o1/rst_op        |               10 |             16 |
+|  clk_IBUF_BUFG         |                                          |                  |               12 |             40 |
+|  clk_IBUF_BUFG         |                                          | o1/rst_op        |               31 |             82 |
+|  clk_IBUF_BUFG         | kb/op/E[0]                               | o1/rst_op        |              184 |            512 |
++------------------------+------------------------------------------+------------------+------------------+----------------+
+
+

@@ -11,7 +11,6 @@ module lfsr9_custom (
     wire new_LED5 = lfsr[6] ^ lfsr[0];
     wire new_LED3 = lfsr[4] ^ lfsr[0];
 
-
     assign feedback = lfsr[0];
 
     // 下一個 LFSR state
